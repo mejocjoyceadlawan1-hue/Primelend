@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PrimeLend Admin</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand"><i>PL</i> PrimeLend</div><span>Admin Portal</span><button id="logout" hidden>Log out</button></header>
+<main>
+<section id="login" class="login">
+ <div class="card"><small>PRIMELEND ADMIN</small><h1>Welcome back.</h1>
+ <p>Sign in to review submitted applications.</p>
+ <form id="loginForm"><input id="email" type="email" placeholder="Admin email" required>
+ <input id="password" type="password" placeholder="Password" required><button>Sign in</button></form>
+ <div id="error"></div><em>Demo login: admin@primelend.local / ChangeMe123!</em></div>
+</section>
+<section id="dashboard" hidden>
+ <small>ADMIN DASHBOARD</small><h1>Loan applications</h1><p>Review, search and update borrower applications.</p>
+ <div class="stats"><article><span>TOTAL</span><b id="total">0</b></article><article><span>PENDING</span><b id="pending">0</b></article><article><span>APPROVED</span><b id="approved">0</b></article><article><span>REJECTED</span><b id="rejected">0</b></article></div>
+ <div class="tools"><input id="search" placeholder="Search applicant or email"><select id="filter"><option>All</option><option>Pending</option><option>Needs Information</option><option>Approved</option><option>Rejected</option></select></div>
+ <div class="table"><table><thead><tr><th>APPLICANT</th><th>AMOUNT</th><th>TERM</th><th>PURPOSE</th><th>STATUS</th><th>DATE</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+</section></main>
+<div id="overlay" hidden><div class="modal"><button id="close">×</button><small>APPLICATION REVIEW</small><h2 id="mName"></h2><p id="mEmail"></p><div id="details"></div>
+<label>Status<select id="mStatus"><option>Pending</option><option>Needs Information</option><option>Approved</option><option>Rejected</option></select></label>
+<label>Admin notes<textarea id="mNotes" rows="4"></textarea></label><button class="save" id="save">Save decision</button></div></div>
+<script src="app.js"></script></body></html>
